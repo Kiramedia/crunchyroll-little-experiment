@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EJERCICIO RESPONSIVE|Kevin Rondon</title>
+
+	<!-- GOOGLE FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+	<!-- CSS -->
+	<link href="style.css" type="text/css" rel="stylesheet">
+
+	<!-- ICONOS GOOGLE -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!--Slick-->
+	<link rel="stylesheet" type="text/css" href="slick/slick.css" />
+
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+
+	<script>
+
+		$(document).ready(function () {
+
+			// Botón de top
+			var body = $("html, body");
+			$("#btTop").click(function () {
+				body.animate({ scrollTop: 0 }, 500);
+			});
+
+			$("#mobile-menu").click(function () {
+				var visible = $("#menu-header").data("view");
+
+				if (visible == false) {
+					$("#menu-header").animate({ width: "100%" }, 500);
+					$("#menu-header").data("view", true);
+				}
+
+				if (visible == true) {
+					$("#menu-header").animate({ width: "0%" }, 500);
+					$("#menu-header").data("view", false);
+				}
+
+			});
+
+			$('#header-image').slick({
+				autoplay: true,
+				infinite: true,
+				speed: 3000,
+				fade: true,
+				cssEase: 'linear',
+				pauseOnHover: false,
+			});
+
+			$('#entradas-index').slick({
+
+				dots: false,
+				infinite: false,
+				speed: 300,
+				slidesToShow: 3,
+				responsive: [
+					{
+						breakpoint: 600,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1,
+							infinite: true,
+							dots: true
+						}
+					}
+				],
+			});
+		});
+
+		$(window).resize(function () {
+
+			var ventana = $(window).width();
+
+			if (ventana > 600) {
+				$("#menu-header").css("width", "100%");
+				$("#menu-header").data("view", false);
+			} else if (ventana < 600) {
+				$("#menu-header").css("width", "0%");
+				$("#menu-header").data("view", false);
+			}
+		});
+
+
+	</script>
+
+
+</head>
+
+<body>
+
+
+	<!-- header -->
+	<header id="header-index">
+
+
+
+		<!-- logo en header -->
+		<div id="logo-header">
+		</div>
+
+		<!-- menu principal -->
+		<div id="mobile-menu">
+			<span id="menu-hambur" class="material-icons">
+				menu
+			</span>
+		</div>
+
+		<nav id="menu-header" data-view=false>
+			<a href="">Series</a>
+			<a href="">Noticias</a>
+			<a href="">Juegos</a>
+			<a href="">Premium</a>
+			<a href="">Favoritos</a>
+		</nav>
+
+		<!-- back de header -->
+		<div id="back-header">
+			<div id="overlay-header"></div>
+			<div id="header-image">
+				<img src="./Header.png" />
+				<img src="./Header1.png" />
+			</div>
+
+		</div>
+
+
+	</header>
+
+	<!-- ======================================= -->
+	<!-- ======================================= -->
+	<!-- ======================================= -->
+
+
+
+
+
+	<!-- section principal -->
+
+	<section id="section-index">
+
+		<h2>Crunchyroll Premium</h2>
+		<p>Sigue viendo tus series donde quieres, en cualquier dispositivo, incluyendo móviles. Verás los últimos
+			episodios de tus series favoritas 1 hora después de emitirse en Japón. Anime & Manga. Lo más nuevo en Japón.
+			Cientos de episodios. Premium sin anuncios.</p>
+		<a href="" class="boton">¡Ser Premium!</a>
+
+	</section>
+
+	<!-- ======================================= -->
+	<!-- ======================================= -->
+	<!-- ======================================= -->
+
+
+
+	<!-- Entradas principales -->
+	<div id="entradas-index">
+
+		<article class="entrada">
+			<figure>
+				<a href="" class="boton plus-entrada">+</a>
+				<img src="./Image1.jpg">
+			</figure>
+			<h5>Shonen</h5>
+		</article>
+
+		<article class="entrada">
+			<figure>
+				<a href="" class="boton plus-entrada">+</a>
+				<img src="./Image2.jpg">
+			</figure>
+			<h5>Shojo</h5>
+
+		</article>
+
+		<article class="entrada">
+			<figure>
+				<a href="" class="boton plus-entrada">+</a>
+				<img src="./Image3.jpg">
+			</figure>
+			<h5>Seinen</h5>
+		</article>
+
+	</div>
+	<!-- ======================================= -->
+	<!-- ======================================= -->
+	<!-- ======================================= -->
+
+
+
+	<!-- noticias-index -->
+	<div id="wrap-news">
+
+		<article class="news1">
+			<figure class="wrap-img-news1">
+				<img src="./Noticia1.jpg">
+			</figure>
+			<h5>[Chile] Nuevo punto de venta de códigos prepago: TodoCodigos.cl</h5>
+			<p>En Crunchyroll seguimos intentando facilitar las cosas todo lo posible a nuestros usuarios, así que hoy
+				anunciamos un nuevo punto de venta de tarjetas de prepago para nuestros usuarios de Chile con
+				TodoCodigos.cl. </p>
+			<a href="" class="boton">+</a>
+		</article>
+
+		<article class="news">
+			<figure class="wrap-img-news">
+				<img src="./Noticia2.png">
+			</figure>
+			<h6>'Extra Olympia Kyklos' se une a la temporada de primavera de Crunchyroll</h6>
+			<p>La autora Mari Yamazaki, creadora de Thermae Romae, parece tener un toque especial a la hora de
+				entretenernos con sus historias... </p>
+			<a href="" class="boton">+</a>
+		</article>
+
+		<article class="news">
+			<figure class="wrap-img-news">
+				<img src="./Noticia3.jpeg">
+			</figure>
+			<h6>The God of High School, el próximo Crunchyroll Original revela equipo, reparto y fecha de estreno
+			</h6>
+			<p>Basado en la serie WEBTOON creada por Yongje Park, The God of High School es la próxima producción
+				original de Crunchyroll en camino.</p>
+			<a href="" class="boton">+</a>
+		</article>
+
+		<article class="news">
+			<figure class="wrap-img-news">
+				<img src="./Noticia4.jpg">
+			</figure>
+			<h6>El anime Kiratto Pri☆Chan pospone la emisión de sus episodios a partir de la próxima semana</h6>
+			<p>La cuenta de Twitter oficial del anime Kiratto Pri☆Chan ha revelado que la serie pospondrá la emisión del
+				episodio 107 y posteriores con motivo de la situación con el COVID-19... </p>
+			<a href="" class="boton">+</a>
+		</article>
+
+		<article class="news">
+			<figure class="wrap-img-news">
+				<img src="./Noticia5.jpg">
+			</figure>
+			<h6>13 Sentinels: Aegis Rim ya supera las 130,000 unidades distribuidas</h6>
+			<p>Desde Atlus han anunciado que 13 Sentinels: Aegis Rim ya supera las 130,000 unidades distribuidas tras
+				haberse lanzado el pasado 28 de noviembre en las PlayStation 4 de Japón. </p>
+			<a href="" class="boton">+</a>
+		</article>
+
+
+	</div>
+
+
+
+	<!-- ======================================= -->
+	<!-- ======================================= -->
+	<!-- ======================================= -->
+
+
+	<!-- Footer -->
+
+	<footer id="footer-index">
+
+		<!-- logo en footer -->
+		<div id="logo-footer">
+			<img src="./Logo.png" alt="logo">
+		</div>
+
+		<!-- info en footer -->
+		<ul id="info-footer">
+			<li>
+				<span class="material-icons">
+					room
+				</span>
+				<p>33 Street Crunchyroll Company, Estados Unidos</p>
+			</li>
+			<li>
+				<span class="material-icons">
+					stay_primary_portrait
+				</span>
+				<p>+1 333-333-3333</p>
+			</li>
+		</ul>
+
+		<!-- Bt go TOP -->
+		<div id="btTop">
+			<span class="material-icons">
+				keyboard_arrow_up
+			</span>
+		</div>
+
+	</footer>
+	<!-- ======================================= -->
+	<!-- ======================================= -->
+	<!-- ======================================= -->
+
+
+</body>
+
+</html>

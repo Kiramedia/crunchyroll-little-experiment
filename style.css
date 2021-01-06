@@ -1,0 +1,573 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/*
+
+0 - UNIVERSALES
+===========================
+
+1 - TEXTOS
+===========================
+
+2- HEADER  (MENU)
+===========================
+
+3- SECTION EN INDEX
+
+===========================
+
+4- ENTRADAS INDEX
+
+===========================
+
+5- NOTICIAS
+
+===========================
+
+6- FOOTER
+
+
+*/
+
+
+/* 0 - UNIVERSALES */
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* https://developer.mozilla.org/es/docs/Web/CSS/var */
+:root {
+	--uno: #030201;
+	--dos:#df6300;
+	--tres:#df6300;
+	--cuatro:rgb(255, 255, 255);
+	--cinco:#e29555;
+}
+
+body{
+	background: var(--uno);
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 100%;
+	color: white;
+	overflow-x: hidden;
+}
+
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+
+
+/* 1 - TEXTOS */
+
+p{
+	font-weight: 400;
+	font-size: 0.8em;
+}
+
+h1{
+	font-weight: 400;
+	font-size: 3.4em;
+}
+
+h2{
+	font-weight: 500;
+	font-size: 3em;
+}
+
+h3{
+	font-weight: 500;
+	font-size: 2.6em;
+}
+h4{
+	font-weight: 500;
+	font-size: 2.2em;
+}
+h5{
+	font-weight: 500;
+	font-size: 1.8em;
+}
+h6{
+	font-weight: 500;
+	font-size: 1.4em;
+}
+
+a{
+
+}
+
+.boton{
+	display: inline-block;
+	padding: 8px 14px;
+	text-decoration: none;
+	border:1px solid white;
+	border-radius: 2px;
+	margin: 10px auto;
+	color: white;
+	transition: all 0.5s;
+}
+.boton:hover{
+	background: white;
+	color: var(--dos);
+}
+
+img{
+	width: auto;
+	height: 100%;
+}
+
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+
+
+
+/* 2 - HEADER (MENU) */
+#header-index{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	/* https://bennettfeely.com/clippy/ */
+	clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 95%, 0 0);
+}
+
+#logo-header{
+	position: absolute;
+	z-index: 2;
+	width: 420px;
+	height: 120px;
+	background: url("./Logo.png");
+	filter: brightness(0) invert(1);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	top:20vh;
+	left:50%;
+	transform: translateX(-50%);
+}
+
+
+#mobile-menu{
+	position: absolute;
+	z-index: 3;
+	height: 2.1rem;
+	padding: 0.2rem 0rem 0rem 1rem;
+	display: none;
+}
+
+#menu-header{
+	position: absolute;
+	z-index: 2;
+	top: 50vh;
+	width: 100%;
+	padding: 3px 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+
+#menu-header a{
+	display: flex;
+	width: 100px;
+	height: 30px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	margin: 0 2%;
+	transition: all 0.5s;
+	align-items: center;
+	justify-content: center;
+}
+
+#menu-header a:hover{
+	background: rgba(255, 255, 255, 0.9);
+	color: #df6300;
+	font-weight: bold;
+}
+
+#back-header{
+	position: fixed;
+	z-index: 1;
+	width: 100vw;
+	height: 100%;
+}
+
+#header-image{
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
+#header-image img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#overlay-header{
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		rgba(0, 0, 0, 0.3), 
+		rgba(0, 0, 0, 0.6));
+}
+
+.slick-list{
+	width: 100%;
+	height: 100%;
+}
+
+.slick-track{
+	width: 100%;
+	height: 100%;
+}
+
+/*  3- SECTION EN INDEX */
+
+#section-index{	
+	padding: 100px 10px;
+	text-align: center;
+	color: white;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+}
+#section-index p{
+	width: 600px;
+	margin: 30px auto;
+	text-align: center;
+}
+
+
+
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+
+
+
+/* 4- ENTRADAS INDEX */
+#entradas-index {
+	width: 100vw;
+	background: var(--tres);
+	/* https://bennettfeely.com/clippy/ */
+	clip-path: polygon(50% 0%, 100% 9%, 100% 92%, 50% 100%, 0 92%, 0 9%);
+	padding: 100px 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+}
+
+.entrada{
+	display: flex !important; 
+	align-items: center;
+	flex-flow: column;
+	margin: 0 30px;
+	text-align: center;
+	text-decoration: none;	
+}
+.entrada figure{
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	background: var(--uno);
+	overflow: hidden;
+	margin: 0 0 20px 0;
+	position: relative;
+}
+
+.plus-entrada{
+	position: absolute;
+	z-index: 1;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: all linear 0.3s;
+}
+
+.entrada figure:hover .plus-entrada{
+	top: 50%;
+	left: 50%;
+	opacity: 1;
+}
+
+.entrada h5{
+	text-decoration: none;
+	color: white;
+}
+
+figure{
+	transition: all 0.5s;
+}
+
+.entrada:hover figure img{
+	opacity: 0.6;
+	transition: all 0.5s;
+}
+
+
+
+
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+
+
+
+/* 5- NOTICIAS */
+/* https://css-tricks.com/snippets/css/complete-guide-grid/ */
+
+#wrap-news{
+	width: 80vw;
+	margin: 100px auto;
+	background: var(--tres);
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows:  200px 150px 200px 150px;
+}
+
+.news1{
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 5;
+	background: var(--dos);
+	padding: 20px;
+}
+
+.wrap-img-news{
+	width: 100%;
+	height: 50%;
+	background: var(--uno);
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.news h6{
+	font-size: 1rem;
+}
+
+.news p{
+	font-size: 0.8rem;
+}
+
+.wrap-img-news img{
+	height: auto;
+	width: 100%;
+}
+
+.wrap-img-news1{
+	width: 100%;
+	height: 70%;
+	background: var(--uno);
+	margin-bottom: 10px;
+}
+
+.wrap-img-news1 img{
+	width: 100%;
+}
+
+.wrap-img-news1 img:hover{
+	opacity: 1;
+}
+
+.wrap-img-news img:hover{
+	opacity: 1;
+}
+
+.news{
+	padding: 20px;
+	grid-column-start: auto;
+	grid-column-end: auto;
+	grid-row-start: auto;
+	grid-row-end: span 2;
+	background: var(--cinco);
+}
+
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+
+
+
+/* 6 - FOOTER */
+
+#footer-index {
+	background: var(--dos);
+	clip-path: polygon(50% 20%, 100% 0, 100% 100%, 0 100%, 0 0);
+	padding: 85px 0;
+	position: relative;
+}
+
+
+#logo-footer{
+	width: 300px;
+	height: 120px;
+	background: var(--tres);
+	margin: 60px auto 0 auto;
+	position: relative;
+	
+}
+
+#logo-footer img{
+	width: 100%;
+	height: auto;
+	filter: brightness(0) invert(1);
+}
+
+
+#info-footer{
+	width: 100%;
+	text-align: center;
+	margin: 20px 0;
+}
+
+#info-footer li{
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#btTop{
+	background: var(--cuatro);
+	color: black;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+#btTop span{
+	font-size: 2em !important;
+}
+
+#btTop:hover{
+	color: white;
+	background: var(--uno);
+	transition: all 0.5s;
+
+}
+
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+/* ============================================================================================================ */
+
+@media only screen and (max-width: 600px){
+
+	#header-index{
+		height: 50vh;
+	}
+
+	#back-header{
+		height: 50vh;
+	}
+
+	#mobile-menu{
+		display: block;
+		color: black;
+		background: var(--cuatro);
+		width: 100%;
+	}
+
+	#mobile-menu .material-icons{
+		cursor: pointer;
+		transition: all .5s;
+	}
+
+	#mobile-menu .material-icons:hover{
+		transform: rotate(90deg);
+	}
+
+	#menu-header{
+		top: 2rem;
+		flex-direction: column;
+		align-items: center;
+		overflow: hidden;
+		width: 0;
+		z-index: 3;
+		background: rgba(255, 255, 255, 0.9);
+	}
+
+	#menu-header a{
+		margin: 0.2rem 1rem;
+		width: 90%;
+		background: rgba(255, 255, 255, 0.9);
+		color: #df6300;
+	}
+
+	#section-index p{
+		padding: 0 1rem;
+		width: 100%;
+	}
+
+	#entradas-index{
+		flex-flow: column;
+		align-items: center;
+	}
+
+	.entrada figure{
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		background: var(--uno);
+		margin: 0 0 20px 0;
+		position: relative;
+	}
+
+	.entrada{
+		margin: 1rem  0;
+	}
+
+	#wrap-news{
+		grid-template-rows:  300px 200px 380px 380px;
+	}
+
+	.wrap-img-news img{
+		height: 100%;
+		width: auto;
+	}
+
+	.news h6{
+		font-size: 0.8rem;
+	}
+
+	.news p{
+		font-size: 0.5rem;
+	}
+
+	.wrap-img-news1{
+		height: 50%;
+	}
+
+	.news1{
+		grid-column-start: 1;
+		grid-column-end: 5;
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+
+	.news{
+		grid-column-start: auto;
+		grid-column-end: span 2;
+		grid-row-start: auto;
+		grid-row-end: span 1;
+		background: var(--cinco);
+	}
+}
